@@ -1,0 +1,13 @@
+stages:
+- name: Run Script
+  steps:
+  - runScriptConfig:
+      image: java:8
+      shellScript: /bin/bash
+    env:
+      foo: bar
+    when:
+      event:
+        include:
+        - pull_request
+timeout: 60
